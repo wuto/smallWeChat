@@ -1,0 +1,145 @@
+/* pages/me/me.wxss */
+
+/*显示歌曲列表整体样式*/
+
+.log-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx 0rpx;
+}
+
+/*歌曲信息item整体样式*/
+
+.musicview {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/*position样式*/
+.position-text {
+  margin: 30rpx;
+}
+
+/*歌曲信息item整体样式(除了前面的position)*/
+
+.logitem {
+  width: 100%;
+  margin: 10rpx 0rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+/*歌曲名称样式*/
+
+.log-item {
+  font-size:36rpx;
+  margin: 10rpx;
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*歌手和专辑信息整体样式*/
+
+.artists-view {
+  display: flex;
+  flex-direction: row;
+}
+
+/*歌手样式*/
+.user-name {
+  font-size:26rpx;
+  margin: 10rpx;
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.album-text {
+  font-size:26rpx;
+  margin: 10rpx;
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/*分割线样式*/
+
+.divLine {
+  margin-top: 4rpx;
+  background: #f3f3f3;
+  width: 100%;
+  height: 2rpx;
+}
+
+/*头部整体样式*/
+
+.topContainsView {
+  display: flex;
+  flex-direction: row;
+  padding: 40rpx;
+  background-color: gray;
+}
+
+/**
+ * 头像样式
+*/
+
+.profileImage {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+/*头部显示歌单名称和用户信息整体样式*/
+
+.topRightView {
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  margin-top: 18rpx;
+}
+
+/*歌单名称样式*/
+
+.topRightName {
+  font-size: 24rpx;
+}
+
+/*用户头像和用户名整体样式*/
+
+.userView {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/**
+ * 用户头像样式
+*/
+
+.userImage {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 24rpx;
+}
+
+/*用户名称样式*/
+
+.topRightTime {
+  font-size: 20rpx;
+  color: #b8b2b2;
+  margin-top: 10rpx;
+}
+
+
+
+
+
+.playall{
+
+}

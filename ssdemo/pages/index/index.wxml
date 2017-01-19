@@ -1,0 +1,24 @@
+
+<!--index.wxml-->
+<loading hidden="{{loadingHidden}}">正在加载...</loading>
+<scroll-view class="scroll-view-s" scroll-y="true" bindscrolltoupper="bindscrolltoupper" bindscrolltolower="bindscrolltolower" >
+  <block wx:for-items="{{list.playlist}}">
+
+    <!-- 分割线 -->
+    <view class="divLine"></view>
+
+    <!-- 整体item样式 -->
+    <view  bindtap="logitem" data-position="{{item.id}}" class="containsView">
+
+      <!--顶部样式-->
+      <view class="topContainsView">
+        <image class="profileImage" src="{{item.coverImgUrl}}" />
+        <view class="topRightView">
+          <text class="topRightName">{{item.name}}</text>
+          <text class="topRightTime">{{item.trackCount}}首 by {{item.creator.nickname}}</text>
+        </view>
+      </view>
+    </view>
+    
+  </block>
+</scroll-view>

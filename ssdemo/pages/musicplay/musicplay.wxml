@@ -1,0 +1,24 @@
+<!--pages/music/music.wxml-->
+<loading hidden="{{loadingHidden}}">正在加载...</loading>
+<scroll-view class="scroll-view-s" scroll-y="true" bindscrolltoupper="bindscrolltoupper" bindscrolltolower="bindscrolltolower" >
+  <block wx:for-items="{{list.result.tracks}}">
+
+    <!-- 分割线 -->
+    <view class="divLine"></view>
+
+  
+
+
+<audio  poster="{{item.album.picUrl}}" name="{{item.name}}" author="{{item.artists[0].name}}" src="{{item.mp3Url}}" id="myAudio"   controls="false" loop>
+</audio>
+
+<button type="primary" bindtap="audioPlay">播放</button>
+<button type="primary" bindtap="audioPause">暂停</button>
+<button type="primary" bindtap="audio14">设置当前播放时间为14秒</button>
+<button type="primary" bindtap="audioStart">回到开头</button>
+
+
+ 
+    
+  </block>
+</scroll-view>

@@ -1,0 +1,125 @@
+/* pages/music/music.wxss */
+
+page {
+  background: #434343;
+}
+
+.scroll-view-s {
+  height: 100%;
+}
+
+/*整体view样式*/
+
+.containsView {
+  padding: 20rpx 15rpx 20rpx 15rpx;
+  background-color: white;
+}
+
+/*头部整体样式*/
+
+.topContainsView {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/**
+ * 头像样式
+*/
+
+.profileImage {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+}
+
+/*头部显示名字和时间整体样式*/
+
+.topRightView {
+  margin-left: 15rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+/*用户名称样式*/
+
+.topRightName {
+  font-size: 24rpx;
+}
+
+/*时间样式*/
+
+.topRightTime {
+  font-size: 20rpx;
+  color: #b8b2b2;
+  margin-top: 10rpx;
+}
+
+/*分割线样式*/
+
+.divLine {
+  background: #f3f3f3;
+  width: 100%;
+  height: 15rpx;
+}
+
+.music-box-view {
+  padding-bottom: 20rpx;
+}
+
+.music-play {
+  height: 110rpx;
+  width: 110rpx;
+}
+
+.body-view {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.slider-view {
+  width: 100%;
+}
+
+/*音乐播放bar*/
+
+.music-bar-view {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0rpx;
+  right: 0rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #434343;
+}
+
+.left-time {
+  margin-left: 30rpx;
+  margin-right: 8rpx;
+}
+
+.right-time {
+  margin-left: 8rpx;
+  margin-right: 30rpx;
+}
+
+.lyric-text {
+  display: block;
+  color: white;
+}
+
+.contain-view {
+  display: flex;
+  flex-direction: column;
+}
+
+.lyric-view {
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

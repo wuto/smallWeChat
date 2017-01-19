@@ -1,0 +1,49 @@
+
+<!--logs.wxml-->
+
+<!--<view class="container log-list">
+<scroll-view scroll-y="true" class="article-list" style="height:500px" bindscrolltoupper="nextpage">
+<block wx:for="{{list}}>
+<view class="list-item" ></view>
+<view class="container log-list">
+  <block wx:for="{{list}}" wx:for-item="log" wx:key="*this">
+    <text bindtap="logitem" class="log-item">{{index + 1}}. {{log}}</text>
+  </block>
+</view>
+</block>
+</scroll-view>
+</view>-->
+<loading hidden="{{loadingHidden}}">正在加载...</loading>
+
+<!--顶部样式-->
+<view class="topContainsView">
+  <image class="profileImage" src="{{list.result.coverImgUrl}}" />
+  <view class="topRightView">
+    <text class="topRightName">{{list.result.name}}</text>
+    <view class="userView">
+      <image class="userImage" src="{{list.result.creator.avatarUrl}}" />
+      <text class="topRightTime">{{list.result.creator.nickname}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="playall" bindtap="playall">播放全部</view>
+
+<!--歌曲列表-->
+<view class="container log-list">
+  <block wx:for="{{list.result.tracks}}">
+    <view class="musicview" bindtap="musicview" data-position="{{item.id}}">
+      <text class="position-text">{{index + 1}}</text>
+      <view class="logitem">
+        <text class="log-item">{{item.name}}</text>
+        <view class="artists-view">
+          <text wx:for="{{item.artists}}" class="user-name">{{item.name}}</text>
+          <text class="album-text"> - {{item.album.name}}</text>
+        </view>
+
+        <!-- 分割线 -->
+        <view class="divLine"></view>
+      </view>
+    </view>
+  </block>
+</view>

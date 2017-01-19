@@ -1,0 +1,23 @@
+/**app.wxss**/
+
+
+
+/*底部view整体样式*/
+.bottomView{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+/*每个Item样式*/
+.bottomItemView{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+
+

@@ -1,26 +1,33 @@
 
 <!--pages/music/music.wxml-->
 <loading hidden="{{loadingHidden}}">正在加载...</loading>
-
 <view class="contain-view">
 
-<view class="lyric-view">
-<block wx:for="{{lyric}}">
-      <text class="lyric-text">{{item}}</text>
-</block>
-</view> 
+   
 
-<view class="music-bar-view">
-  <block wx:for="{{list.songs}}">
-    <view class="body-view">
-      <text class="left-time">{{curtime}}</text>
-      <slider bindchange="slider1change" min="0" max="{{item.duration}}" step="1" value="{{currentTime}}" class="slider-view" />
-      <text class="right-time">{{musictime}}</text>
-    </view>
-    <view class="music-box-view">
-      <image src="{{isplay?'../../image/music_pause.png':'../../image/music_play.png'}}" class="music-play" bindtap="play"></image>
-    </view>
-    <audio poster="{{item.album.picUrl}}" name="{{item.name}}" author="{{item.artists[0].name}}" src="{{item.mp3Url}}" id="myAudio" bindtimeupdate="bindtimeupdate" loop></audio>
-  </block>
+
+<scroll-view style="width: 100%" scroll-x="true" class="lyric-viewr">
+ <!--<scroll-view style="height:1000rpx;" scroll-y="true" scroll-top="{{toplength}}" class="lyric-view" >
+      <block wx:for="{{lyric}}">
+        <text class="lyric-text">{{item}}</text>
+      </block>-->
+   <image animation="{{animation}}" class="image" src="{{list.songs[0].album.blurPicUrl}}"></image>
+  
+  <!--</scroll-view>-->
+
+</scroll-view>
+
+  <view class="music-bar-view">
+    <block wx:for="{{list.songs}}">
+      <view class="body-view">
+        <text class="left-time">{{curtime}}</text>
+        <slider bindchange="slider1change" min="0" max="{{item.duration}}" step="1" value="{{currentTime}}" class="slider-view" />
+        <text class="right-time">{{musictime}}</text>
+      </view>
+      <view class="music-box-view">
+        <image src="{{isplay?'../../image/music_pause.png':'../../image/music_play.png'}}" class="music-play" bindtap="play"></image>
+      </view>
+      <audio poster="{{item.album.picUrl}}" name="{{item.name}}" author="{{item.artists[0].name}}" src="{{item.mp3Url}}" id="myAudio" bindtimeupdate="bindtimeupdate" loop></audio>
+    </block>
+  </view>
 </view>
-</view> 

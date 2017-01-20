@@ -1,10 +1,11 @@
 // pages/music/music.js
 var app = getApp();
 var mid
-var dex=0
-  var i = 0
-  var animationTime
+var dex = 0
+
+var animationTime
 Page({
+  
   data: {
     list: [],
     loadingHidden: false,
@@ -16,8 +17,8 @@ Page({
     lyric: "",
     lyrictime: 0,
     animation: "",
-    toplength: 0 ,
-    length:0
+    toplength: 0,
+    length: 0
   },
 
   onLoad: function (options) {
@@ -26,6 +27,8 @@ Page({
     mid = options.id
 
     this.requestData(mid);
+    this.idc=0
+
   },
 
 
@@ -64,38 +67,49 @@ Page({
     })
   },
 
+
   //播放 暂停
   //播放的时候开始歌词动画（如果歌词有的话）
   play: function () {
+    var anim
     var that = this;
     if (this.data.isplay) {//正在播放
       this.audioCtx.pause(),
-       clearInterval(animationTime)//清除动画
-        that.setData({
-          play: "../../image/music_play.png",
-          isplay: false,
-          //  animation: that.animation.export()
-        })
+        clearInterval(animationTime)//清除动画
+      that.setData({
+        play: "../../image/music_play.png",
+        isplay: false,
+        //  animation: that.animation.export()
+      })
     } else {//没在播放
       this.audioCtx.play(),
         // this.animation.rotate(360).step(),
-      
-         animationTime= setInterval(function() {
-          
-           this.animation.rotate(1 * (++i)).step()
+// animation
+          anim=null
+         anim = wx.createAnimation({
+          // 动画持续时间，单位ms，默认值 400
+          duration: 500,
+          timingFunction: 'linear',
+          // transform:rotate(732deg)
 
-            that.setData({ 
-              animation: that.animation.export()
-               })
+         
+        })
 
-        }.bind(that), 100) 
+      animationTime = setInterval(function () {
 
+        anim.rotate(5 * (++this.idc)).step()
 
         that.setData({
-          play: "../../image/music_pause.png",
-          isplay: true,
-          // animation: that.animation.export()
+          animation: anim.export()
         })
+
+      }.bind(that), 500)
+
+
+      that.setData({
+        play: "../../image/music_pause.png",
+        isplay: true,
+      })
 
     }
   },
@@ -149,74 +163,71 @@ Page({
   bindtimeupdate: function (event) {
     var that = this;
     var currenttime = event.detail.currentTime;
-      var ccc=  this.data.toplength
-      var scro=that.data.toplength;
-    if(null!=this.data.lyrictime[dex]&&currenttime * 1000>this.data.lyrictime[dex]){
-      scro=that.data.toplength + 10;
-      dex=dex+1
+
+    var scro = that.data.toplength;
+    if (null != this.data.lyrictime[dex] && currenttime * 1000 > this.data.lyrictime[dex]) {
+      scro = that.data.toplength + 10;
+      dex = dex + 1
     }
 
-    // lyrictime
     this.setData({
       currentTime: currenttime * 1000,
       curtime: that.formarttime(currenttime * 1000),
       toplength: scro
-      
+
     })
   },
 
 
-  onReady: function (options) {
+  onReady: function () {
     // 页面初始化 options为页面跳转所带来的参数
-
-    // var ids = options.id
     // 页面渲染完成
     // 使用 wx.createAudioContext 获取 audio 上下文 context
     this.audioCtx = wx.createAudioContext('myAudio')
 
     this.requestDataa(mid);
 
-    this.requ();
+    // this.requ();
 
 
   },
 
 
-  /**
-       * 实例化一个动画
-       */
-  requ: function () {
-    //实例化一个动画
-    this.animation = wx.createAnimation({
-      // 动画持续时间，单位ms，默认值 400
-      duration: 100,
-      /**
-       * http://cubic-bezier.com/#0,0,.58,1  
-       *  linear  动画一直较为均匀
-       *  ease    从匀速到加速在到匀速
-       *  ease-in 缓慢到匀速
-       *  ease-in-out 从缓慢到匀速再到缓慢
-       * 
-       *  http://www.tuicool.com/articles/neqMVr
-       *  step-start 动画一开始就跳到 100% 直到动画持续时间结束 一闪而过
-       *  step-end   保持 0% 的样式直到动画持续时间结束        一闪而过
-       */
-      timingFunction: 'linear',
-      // 延迟多长时间开始
-      // delay: 100,
-      /**
-       * 以什么为基点做动画  效果自己演示
-       * left,center right是水平方向取值，对应的百分值为left=0%;center=50%;right=100%
-       * top center bottom是垂直方向的取值，其中top=0%;center=50%;bottom=100%
-       */
-      // transformOrigin: 'top bottom 0',
-      success: function (res) {
-        console.log(res)
-      }
-    })
+  // /**
+  //      * 实例化一个动画
+  //      */
+  // requ: function () {
+  //   //实例化一个动画
+  //   this.animation = wx.createAnimation({
+  //     // 动画持续时间，单位ms，默认值 400
+  //     duration: 100,
+  //     /**
+  //      * http://cubic-bezier.com/#0,0,.58,1  
+  //      *  linear  动画一直较为均匀
+  //      *  ease    从匀速到加速在到匀速
+  //      *  ease-in 缓慢到匀速
+  //      *  ease-in-out 从缓慢到匀速再到缓慢
+  //      * 
+  //      *  http://www.tuicool.com/articles/neqMVr
+  //      *  step-start 动画一开始就跳到 100% 直到动画持续时间结束 一闪而过
+  //      *  step-end   保持 0% 的样式直到动画持续时间结束        一闪而过
+  //      */
+  //     timingFunction: 'linear',
+  //     // 延迟多长时间开始
+  //     // delay: 100,
+  //     /**
+  //      * 以什么为基点做动画  效果自己演示
+  //      * left,center right是水平方向取值，对应的百分值为left=0%;center=50%;right=100%
+  //      * top center bottom是垂直方向的取值，其中top=0%;center=50%;bottom=100%
+  //      */
+  //     // transformOrigin: 'top bottom 0',
+  //     success: function (res) {
+  //       console.log(res)
+  //     }
+  //   })
 
 
-  },
+  // },
 
 
   /**
@@ -268,28 +279,28 @@ Page({
       if (lyricstr == "" || lyricstr == null) {
         lyricstr = "."
       }
-      
-     timestr= this.setTimems(timestr)
+
+      timestr = this.setTimems(timestr)
       timesstrs[i] = timestr//将时间转化为毫秒值
       lyricstrs[i] = lyricstr
     }
     this.setData({
       lyric: lyricstrs,
-      lyrictime:timesstrs,
-      length:lyricstrs.length*44
+      lyrictime: timesstrs,
+      length: lyricstrs.length * 44
     })
   },
 
   //将时间转化为毫秒值
-  setTimems: function(timesstrs){
+  setTimems: function (timesstrs) {
     //  00:00.000
-     var strs = new Array(); //定义一数组
+    var strs = new Array(); //定义一数组
     strs = timesstrs.split(":"); //字符分割 
     //strs[0] 分
     //strs[1]//秒
-      // strs[1]*1000
-      // var str1 = parseInt(strs[1])
-    var time=strs[0]*1000*60+strs[1]*1000;
+    // strs[1]*1000
+    // var str1 = parseInt(strs[1])
+    var time = strs[0] * 1000 * 60 + strs[1] * 1000;
     return time;
   },
 

@@ -1,0 +1,102 @@
+
+<!--index.wxml-->
+<view class="container">
+
+<!--上面头像等相关-->
+  <view class="TopView">
+    <view class="topHeadView">
+      <view bindtap="bindViewTap" class="userinfo">
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        <view class="nameText">
+          <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+          <text class="memberLevel">金卡会员</text>
+        </view>
+      </view>
+      <view class="userinfo">
+        <text class="rightTextView">账户管理 ></text>
+      </view>
+    </view>
+    <view class="collectionView">
+      <view class="collectionItemView">
+        <text class="collectionNumber">0</text>
+        <text class="collectionName">收藏的商品</text>
+      </view>
+      <view class="collectionItemView">
+        <text class="collectionNumber">0</text>
+        <text class="collectionName">收藏的店铺</text>
+      </view>
+    </view>
+  </view>
+
+<!--我的订单-->
+  <view class="OrderView">
+    <view class="orderTopView">
+      <text class="orderLeftTextView">我的订单</text>
+      <view class="orderRightView">
+        <text class="leftTextView">查看所有订单</text>
+        <image class="rightImageView" src="../../image/member/next_gray.png"></image>
+      </view>
+    </view>
+    <view class="orderBottomView">
+      <view class="orderView">
+        <image class="imageView" src="../../image/member/member_DingDanPay.png"></image>
+        <text class="textView">待付款</text>
+      </view>
+      <view class="orderView">
+        <image class="imageView" src="../../image/member/member_DingDanSend.png"></image>
+        <text class="textView">待发货</text>
+      </view>
+      <view class="orderView">
+        <image class="imageView" src="../../image/member/member_DingDanRecive.png"></image>
+        <text class="textView">待收货</text>
+      </view>
+      <view class="orderView">
+        <image class="imageView" src="../../image/member/member_DingDanLater.png"></image>
+        <text class="textView">退货/售后</text>
+      </view>
+    </view>
+  </view>
+
+<!--资产统计-->
+  <view class="propertyCountView">
+    <text class="propertyTextView">资产统计</text>
+    <view class="propertyView">
+      <view class="propertyItemView">
+        <image class="imageView" src="../../image/member/member_ZiChanQ.png"></image>
+        <text class="textView">优惠券</text>
+      </view>
+      <view class="propertyItemView">
+        <image class="imageView" src="../../image/member/member_ZiChanF.png"></image>
+        <text class="textView">积分</text>
+      </view>
+    </view>
+  </view>
+
+<!--底部-->
+  <view class="memberBottonView">
+    <view class="labelView">
+      <text class="leftTextView">收货地址</text>
+      <image class="rightImage" src="../../image/member/next_gray.png"></image>
+    </view>
+    <view class="labelView">
+      <text class="leftTextView">我的会员卡</text>
+      <image class="rightImage" src="../../image/member/next_gray.png"></image>
+    </view>
+    <view class="labelView">
+      <text class="leftTextView">我的消费记录</text>
+      <image class="rightImage" src="../../image/member/next_gray.png"></image>
+    </view>
+    <view class="labelView">
+      <text class="leftTextView">会员手册</text>
+      <image class="rightImage" src="../../image/member/next_gray.png"></image>
+    </view>
+    <view class="labelView">
+      <text class="leftTextView">帮助中心</text>
+      <image class="rightImage" src="../../image/member/next_gray.png"></image>
+    </view>
+    <view class="labelView">
+      <text class="leftTextView">意见反馈</text>
+      <image class="rightImage" src="../../image/member/next_gray.png"></image>
+    </view>
+  </view>
+</view>

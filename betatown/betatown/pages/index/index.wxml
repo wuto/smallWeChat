@@ -1,0 +1,102 @@
+
+<!--index.wxml-->
+
+<!--<view class="container">
+  <image class = "homeImage" mode="widthFix" src="http://p1.bpimg.com/1949/56d0e6252c4f65e2.jpg"></image>
+</view>-->
+<swiper class="swiperView" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{headImgUrls}}">
+    <swiper-item>
+      <image src="{{item.smallImageUrl}}" class="slide-image" mode="scaleToFill" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<!--品牌特卖-->
+<view wx:if="{{brandImageUrls.length>0}}">
+  <view class="brandSpecialSaleView">
+    <view class="brandSpecialSaleTopView">
+      <text class="brandSpecialSaleLeftTextView">品牌特卖</text>
+      <view class="brandSpecialSaleRightView">
+        <text class="leftTextView">more</text>
+        <image class="rightImageView" src="../../image/member/next_gray.png"></image>
+      </view>
+    </view>
+    <view class="brandSpecialSaleBottomView">
+      <block wx:for="{{brandImageUrls}}">
+        <view class="brandSpecialSaleImage">
+          <image class="brandSpecialSaleBottomImageView" src="{{item.showImageUrl}}"></image>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+
+<!--爆款专区-->
+<view wx:if="{{hotImageUrls.length>0}}">
+  <view class="brandSpecialSaleView">
+    <view class="brandSpecialSaleTopView">
+      <text class="brandSpecialSaleLeftTextView">爆款专区</text>
+      <view class="brandSpecialSaleRightView">
+        <text class="leftTextView">more</text>
+        <image class="rightImageView" src="../../image/member/next_gray.png"></image>
+      </view>
+    </view>
+    <view class="hotPrefectureBottomView">
+      <block wx:for="{{hotImageUrls}}">
+        <view class="hotPrefectureBottomAllView">
+          <view class="hotPrefectureBottomImageFatherView">
+            <image class="hotPrefectureBottomImageView" src="{{item.smallImageUrl}}"></image>
+          </view>
+          <text class="hotPrefectureBottomTextView">{{item.title}}</text>
+          <text class="hotPrefectureBottomPriceView">￥{{item.maxStandardPrice}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+
+<!--会员专享-->
+<view wx:if="{{memberImageUrls.length>0}}">
+  <view class="brandSpecialSaleView">
+    <view class="brandSpecialSaleTopView">
+      <text class="brandSpecialSaleLeftTextView">会员专享</text>
+      <view class="brandSpecialSaleRightView">
+        <text class="leftTextView">more</text>
+        <image class="rightImageView" src="../../image/member/next_gray.png"></image>
+      </view>
+    </view>
+    <view class="memberSpecialBottomView">
+      <view class="memberSpecialPaterView">
+        <image class="partImageView" src="{{memberImageUrls[0].showImageUrl}}"></image>
+      </view>
+      <view class="memberSpecialPaterView">
+        <view class="partImageView">
+          <image class="littleImageView" src="{{memberImageUrls[1].showImageUrl}}"></image>
+          <image class="littleImageView" src="{{memberImageUrls[1].showImageUrl}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--为你推荐-->
+<view wx:if="{{recommendImageUrls.length>0}}">
+  <view style="text-align:center">
+    <text class="recommendTextView">————为你推荐————</text>
+  </view>
+  <view class="recommendBottomView">
+    <block wx:for="{{recommendImageUrls}}">
+      <view class="recommendBottomAllView" bindtap="open_details" data-position="{{item.id}}">
+        <view class="recommendBottomImageFatherView">
+          <image class="recommendBottomImageView" src="{{item.smallImageUrl}}"></image>
+        </view>
+        <text class="recommendBottomTextView">{{item.title}}</text>
+        <view class="recommendBottomAllPriceView">
+          <text class="recommendBottomNowPriceView">￥{{item.firstItemSalesPrice}}</text>
+          <text class="recommendBottomPriceView">￥{{item.maxStandardPrice}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

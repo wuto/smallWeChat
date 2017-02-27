@@ -25,7 +25,6 @@ App({
     }
   },
   globalData:{
-    userInfo:null,
-    blog_url:"https://music.163.com"
+    userInfo:null
   }
 })

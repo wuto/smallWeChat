@@ -1,11 +1,9 @@
 {
   "pages": [
     "pages/index/index",
- 
     "pages/playlist/playlist",
     "pages/music/music",
-    "pages/musicplay/musicplay",
-       "pages/me/me"
+    "pages/musicplay/musicplay"
    
   ],
   "window": {

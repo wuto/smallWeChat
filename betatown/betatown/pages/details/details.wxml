@@ -1,0 +1,23 @@
+
+<!--index.wxml-->
+
+<!--<view class="container">
+  <image class = "homeImage" mode="widthFix" src="http://i1.piimg.com/1949/9ce6a936365c6069.jpg"></image>
+  <text class="homeImage">{{ids}}</text>
+</view>-->
+<swiper class="swiperView" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{images}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" mode="scaleToFill" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<!--标题部分-->
+<view class="titleAllView">
+  <text class="titleView">{{objectData.title}}</text>
+  <view class="titleBottomView">
+    <text class="titleNowPriceView">{{objectData.firstItemSalesPrice}}</text>
+    <text class="titlePriceView">{{objectData.firstItemStandardPrice}}</text>
+  </view>
+</view>

@@ -1,0 +1,222 @@
+page{
+  background-color: gainsboro;
+}
+/*顶部整体*/
+.TopView{
+  display: flex;
+  flex-direction: column;
+  background-color: maroon;
+}
+/*头像等部分*/
+.TopView .topHeadView{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+/*头像与用户id*/
+.TopView .topHeadView .userinfo {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+/*头像*/
+.TopView .topHeadView .userinfo .userinfo-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.TopView .topHeadView .userinfo .nameText {
+  display: flex;
+  flex-direction: column;
+}
+/*用户名*/
+.TopView .topHeadView .userinfo .nameText .userinfo-nickname {
+  color: white;
+  margin-top: 35rpx;
+  font-size: 25rpx;
+}
+/*会员等级*/
+.TopView .topHeadView .userinfo .nameText .memberLevel {
+  color: white;
+  margin-top: 10rpx;
+  font-size: 25rpx;
+}
+
+/*右边账户管理按钮文本内容*/
+.TopView .topHeadView .userinfo .rightTextView{
+  color: white;
+  font-size: 20rpx;
+  position: absolute;
+  right: 10rpx;
+  bottom: 10rpx;
+}
+
+/*收藏整体部分*/
+.TopView .collectionView{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.TopView .collectionView .collectionItemView{
+  flex-direction: column;
+  width: 50%;
+  display: flex;
+  margin-left: 2rpx;
+  margin-right: 2rpx;
+  align-items: center;
+  background-color: #3A0101;
+}
+.TopView .collectionView .collectionItemView .collectionNumber{
+  color: white;
+  margin-top: 10rpx;
+  font-size: 20rpx;
+}
+.TopView .collectionView .collectionItemView .collectionName{
+  color: white;
+  padding-bottom: 10rpx;
+  font-size: 20rpx;
+}
+
+/*-----------------------------------------------*/
+/*我的订单整体*/
+.OrderView{
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: gainsboro;
+}
+/*我的订单上面部分*/
+.OrderView .orderTopView{
+  height: 70rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  align-items: center;
+  justify-content:space-between;
+}
+/*我的订单左侧文本框*/
+.OrderView .orderTopView .orderLeftTextView{
+  padding: 15rpx 15rpx 15rpx 15rpx;
+  background-color: white;
+}
+/*我的订单上面的右边整体*/
+.OrderView .orderTopView .orderRightView{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  float: right;
+}
+/*右边的文本框*/
+.OrderView .orderTopView .orderRightView .leftTextView{
+  color: #aaa;
+  padding: 15rpx 15rpx 15rpx 0rpx;
+  background-color: white;
+  height: 100%;
+  align-items: center;
+  font-size: 25rpx;
+}
+/*右边的箭头*/
+.OrderView .orderTopView .orderRightView .rightImageView{
+  padding: 15rpx 15rpx 15rpx 15rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+/*下面整体部分样式*/
+.OrderView .orderBottomView{
+  margin-top: 2rpx;
+  flex-direction: row;
+  display:flex;
+  background-color: white;
+}
+/*下面图标整体样式*/
+.OrderView .orderBottomView .orderView{
+  width: 25%;
+  flex-direction: column;
+  display:flex;
+  align-items: center;
+}
+/*图标上的图片*/
+.OrderView .orderBottomView .orderView .imageView{
+  width: 70rpx;
+  height: 70rpx;
+}
+/*图标上的文字*/
+.OrderView .orderBottomView .orderView .textView{
+  padding-bottom: 15rpx;
+  font-size: 25rpx;
+}
+
+
+/*-----------------------------------------------*/
+/*资产统计整体样式*/
+.propertyCountView{
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: gainsboro;
+}
+/*资产统计文本样式*/
+.propertyCountView .propertyTextView{
+  padding: 15rpx 15rpx 15rpx 15rpx;
+  background-color: white;
+  display: flex;
+}
+/*统计下面整体部分*/
+.propertyView{
+  margin-top: 2rpx;
+  padding: 15rpx 15rpx 15rpx 15rpx;
+  flex-direction: row;
+  display: flex;
+  background-color: white;
+}
+.propertyView .propertyItemView{
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+/*图标上的图片*/
+.propertyView .propertyItemView .imageView{
+  width: 70rpx;
+  height: 70rpx;
+}
+/*图标上的文字*/
+.propertyView .propertyItemView .textView{
+  padding-bottom: 15rpx;
+  font-size: 25rpx;
+}
+
+/*-----------------------------------------------*/
+/*底部整体样式*/
+.memberBottomView{
+
+  display: flex;
+  flex-direction: column;
+  background-color: gainsboro;
+}
+/*label整体view样式*/
+.labelView{
+  margin-top: 10rpx;
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:space-between;
+}
+/*左边文本样式*/
+.labelView .leftTextView{
+  padding: 15rpx 15rpx 15rpx 15rpx;
+  float: left;
+  background-color: white;
+}
+/*右边箭头样式*/
+.labelView .rightImage{
+  padding: 15rpx 15rpx 15rpx 15rpx;
+  float: right;
+  background-color: white;
+  width: 50rpx;
+  height: 50rpx;
+}

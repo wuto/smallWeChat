@@ -6,12 +6,12 @@
 
 
 
-  <scroll-view style="width: 100%" scroll-x="true" class="lyric-viewr">
-    <image animation="{{animation}}" class="image" src="{{list.songs[0].album.blurPicUrl}}"></image>
+  <scroll-view style="width: 100%" scroll-x="true" class="lyric-viewr" hidden="{{!lyric_hidden}}" >
+    <image animation="{{animation}}" class="image" src="{{list.songs[0].album.blurPicUrl}}" bindtap="lyric_open"></image>
   </scroll-view>
 
 
-  <scroll-view style="height:85%;" scroll-y="true" class="lyric-view">
+  <scroll-view style="height:550px;" scroll-y="true" class="lyric-view"  hidden="{{lyric_hidden}}" bindtap="lyric_close">
     <block wx:for="{{lyric}}">
       <text class="lyric-text">{{item}}</text>
     </block>

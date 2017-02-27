@@ -1,0 +1,8 @@
+/*/**app.wxss**/
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: gainsboro;
+  font-size: 30rpx;
+} 

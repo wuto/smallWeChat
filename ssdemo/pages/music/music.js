@@ -5,7 +5,7 @@ var dex = 0
 
 var animationTime
 Page({
-  
+
   data: {
     list: [],
     loadingHidden: false,
@@ -18,7 +18,9 @@ Page({
     lyrictime: 0,
     animation: "",
     toplength: 0,
-    length: 0
+    length: 0,
+
+    lyric_hidden: false
   },
 
   onLoad: function (options) {
@@ -27,7 +29,7 @@ Page({
     mid = options.id
 
     this.requestData(mid);
-    this.idc=0
+    this.idc = 0
 
   },
 
@@ -68,10 +70,34 @@ Page({
   },
 
 
+  //打开歌词
+  lyric_open: function () {
+
+    if (this.data.lyric_hidden) {
+      this.setData({
+        lyric_hidden: false
+      })
+    }
+
+
+  },
+
+  //关闭歌词
+  lyric_close: function () {
+    var that = this;
+    if (this.data.lyric_hidden) {
+      return;
+    }
+    this.setData({
+      lyric_hidden: true
+    })
+
+  },
+
   //播放 暂停
   //播放的时候开始歌词动画（如果歌词有的话）
   play: function () {
-    var anim
+
     var that = this;
     if (this.data.isplay) {//正在播放
       this.audioCtx.pause(),
@@ -82,28 +108,17 @@ Page({
         //  animation: that.animation.export()
       })
     } else {//没在播放
-      this.audioCtx.play(),
-        // this.animation.rotate(360).step(),
-// animation
-          anim=null
-         anim = wx.createAnimation({
-          // 动画持续时间，单位ms，默认值 400
-          duration: 500,
-          timingFunction: 'linear',
-          // transform:rotate(732deg)
+      this.audioCtx.play()
 
-         
-        })
+        animationTime = setInterval(function () {
 
-      animationTime = setInterval(function () {
+          this.anim.rotate(5 * (++this.idc)).step()
 
-        anim.rotate(5 * (++this.idc)).step()
+          that.setData({
+            animation: that.anim.export()
+          })
 
-        that.setData({
-          animation: anim.export()
-        })
-
-      }.bind(that), 500)
+        }.bind(that), 500)
 
 
       that.setData({
@@ -187,10 +202,27 @@ Page({
 
     this.requestDataa(mid);
 
-    // this.requ();
+    this.requ();
 
 
   },
+
+  /**
+   *  实例化一个动画
+   * 
+   */
+  requ: function () {
+
+    //  anim = null
+    this.anim = wx.createAnimation({
+      // 动画持续时间，单位ms，默认值 400
+      duration: 500,
+      timingFunction: 'linear'
+
+
+    })
+  },
+
 
 
   // /**

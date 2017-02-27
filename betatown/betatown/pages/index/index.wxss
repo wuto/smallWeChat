@@ -1,0 +1,239 @@
+/**index.wxss**/
+page{
+  background-color: gainsboro;
+  height: 100%;
+}
+
+/*.homeImage{
+   width: 100%;
+}*/
+
+/*头部广告*/
+.swiperView{
+  width: 100%;
+  height: 30%;
+}
+.slide-image{
+  width: 100%;
+  height: 100%;
+}
+
+/*萌萌的分割线哦哦哦哦哦哦哦哦哦哦*/
+
+/*品牌特卖整体*/
+.brandSpecialSaleView{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rpx;
+}
+/*品牌特卖上面部分*/
+.brandSpecialSaleView .brandSpecialSaleTopView{
+  height: 45rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  align-items: center;
+  justify-content:space-between;
+}
+/*品牌特卖左侧文本框*/
+.brandSpecialSaleView .brandSpecialSaleTopView .brandSpecialSaleLeftTextView{
+  padding: 15rpx 15rpx 15rpx 15rpx;
+  font-size: 25rpx;
+}
+/*品牌特卖上面的右边整体*/
+.brandSpecialSaleView .brandSpecialSaleTopView .brandSpecialSaleRightView{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  float: right;
+}
+/*右边的文本框*/
+.brandSpecialSaleView .brandSpecialSaleTopView .brandSpecialSaleRightView .leftTextView{
+  color: #aaa;
+  padding: 15rpx 15rpx 15rpx 0rpx;
+  height: 100%;
+  align-items: center;
+  font-size: 25rpx;
+}
+/*右边的箭头*/
+.brandSpecialSaleView .brandSpecialSaleTopView .brandSpecialSaleRightView .rightImageView{
+  padding: 15rpx 15rpx 15rpx 15rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+/*品牌特卖下面整体部分*/
+.brandSpecialSaleView .brandSpecialSaleBottomView{
+  width: 100%;
+}
+.brandSpecialSaleImage{
+  position:relative;
+  padding-top:25%;
+  width:50%;
+  float:left;
+  overflow:hidden;
+}
+/*品牌特卖下面商品*/
+.brandSpecialSaleView .brandSpecialSaleBottomView .brandSpecialSaleBottomImageView{
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+}
+
+/*萌萌的分割线哦哦哦哦哦哦哦哦哦哦*/
+
+/*爆款专区下面整体部分*/
+.brandSpecialSaleView .hotPrefectureBottomView{
+  width: 100%;
+  background-color: white;
+  margin-top: 2rpx;
+  display: flex;
+  flex-direction: row;
+}
+/*爆款专区下面商品*/
+.brandSpecialSaleView .hotPrefectureBottomView .hotPrefectureBottomAllView{
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+}
+/*爆款专区下面商品图片*/
+.hotPrefectureBottomImageFatherView{
+  position:relative;
+  padding-top:100%;
+  width:100%;
+  overflow:hidden;
+}
+.brandSpecialSaleView .hotPrefectureBottomView .hotPrefectureBottomImageView{
+  position:absolute;
+  left:0;
+  top:0;
+  width:90%;
+  height:90%;
+  margin-left:5%;
+  margin-top:5%;
+  border:1rpx solid gainsboro;
+  box-sizing:border-box;
+}
+/*爆款专区下面商品文字*/
+.brandSpecialSaleView .hotPrefectureBottomView .hotPrefectureBottomTextView{
+  width: 100%;
+  font-size: 20rpx;
+  text-align: center;
+  height: 20px;
+  line-height: 10px;
+}
+/*爆款专区下面商品价格*/
+.brandSpecialSaleView .hotPrefectureBottomView .hotPrefectureBottomPriceView{
+  margin-top: 5rpx;
+  width: 100%;
+  font-size: 20rpx;
+  text-align: center;
+  color: red;
+}
+
+/*萌萌的分割线哦哦哦哦哦哦哦哦哦哦*/
+
+/*会员专享下面整体部分*/
+.brandSpecialSaleView .memberSpecialBottomView{
+  width: 100%;
+  background-color: white;
+  margin-top: 2rpx;
+  display: flex;
+  flex-direction: row;
+}
+.memberSpecialPaterView{
+  position:relative;
+  padding-top:50%;
+  width:50%;
+  overflow:hidden;
+}
+.brandSpecialSaleView .memberSpecialBottomView .partImageView{
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  
+}
+
+.brandSpecialSaleView .memberSpecialBottomView .partImageView .littleImageView{
+  width:100%;
+  height:50%;
+  border:0.2rpx solid gainsboro;
+  box-sizing:border-box;
+  float:left;
+}
+
+/*萌萌的分割线哦哦哦哦哦哦哦哦哦哦*/
+
+/*为你推荐文本框*/
+.recommendTextView{
+  padding: 15rpx 15rpx 15rpx 15rpx;
+  font-size: 25rpx;
+}
+
+/*为你推荐下面整体部分*/
+.recommendBottomView{
+  width: 100%;
+  margin-top: 2rpx;
+}
+/*为你推荐下面商品*/
+.recommendBottomView .recommendBottomAllView{
+  width: 50%;
+  background-color: white;
+  border:5rpx solid gainsboro;
+  box-sizing:border-box;
+  display: flex;
+  flex-direction: column;
+  float: left;
+}
+/*为你推荐下面商品图片*/
+.recommendBottomImageFatherView{
+  position:relative;
+  padding-top:100%;
+  width:100%;
+  overflow:hidden;
+}
+.recommendBottomView .recommendBottomImageView{
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  box-sizing:border-box;
+}
+/*为你推荐下面商品文字*/
+.recommendBottomView .recommendBottomTextView{
+  width: 100%;
+  font-size: 20rpx;
+  padding: 2rpx,2rpx,2rpx,2rpx;
+  height: 20px;
+  line-height: 10px;
+}
+/*为你推荐下面商品价格整体*/
+.recommendBottomView .recommendBottomAllPriceView{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+/*为你推荐下面现商品价格*/
+.recommendBottomView .recommendBottomAllPriceView .recommendBottomNowPriceView{
+  margin-top: 5rpx;
+  width: 50%;
+  font-size: 22rpx;
+  text-align: center;
+  color: red;
+}
+
+/*为你推荐下面原商品价格*/
+.recommendBottomView  .recommendBottomAllPriceView .recommendBottomPriceView{
+  margin-top: 5rpx;
+  text-decoration:line-through;
+  width: 50%;
+  font-size: 22rpx;
+  text-align: center;
+  color: grey;
+}
